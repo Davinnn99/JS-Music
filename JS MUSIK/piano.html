@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let audioC = new Audio();
+        audioC.src = "Audio/notes_C.mp3";
+
+        let audioDb = new Audio();
+        audioDb.src = "Audio/notes_Db.mp3"
+
+        let audioD = new Audio();
+        audioD.src = "Audio/notes_D.mp3";
+
+        let audioEb = new Audio();
+        audioEb.src = "Audio/notes_Eb.mp3"
+
+        let audioE = new Audio();
+        audioE.src = "Audio/notes_E.mp3";
+
+        let audioF = new Audio();
+        audioF.src = "Audio/notes_F.mp3";
+
+        let audioGb = new Audio();
+        audioGb.src = "Audio/notes_Gb.mp3";
+
+        let audioG = new Audio();
+        audioG.src = "Audio/notes_G.mp3";
+
+        let audioAb = new Audio();
+        audioAb.src = "Audio/notes_Ab.mp3";
+
+        let audioA = new Audio();
+        audioA.src = "Audio/notes_A.mp3";
+
+        let audioBb = new Audio();
+        audioBb.src = "Audio/notes_Bb.mp3";
+
+        let audioB = new Audio();
+        audioB.src = "Audio/notes_B.mp3";
+
+        let audioC2 = new Audio();
+        audioC2.src = "Audio/notes_C2.mp3";
+    </script>
+</head>
+<body class="badan">
+    <div class="piano">
+        <button class="putih" onclick="playpiano('do')"><br><br><br><br><br>1</button>
+        <button class="hitam" onclick="playpiano('db')"></button>
+        <button class="putih" onclick="playpiano('re')"><br><br><br><br><br>2</button>
+        <button class="hitam" onclick="playpiano('eb')"></button>
+        <button class="putih" onclick="playpiano('mi')"><br><br><br><br><br>3</button>
+        <button class="putih" onclick="playpiano('fa')"><br><br><br><br><br>4</button>
+        <button class="hitam" onclick="playpiano('gb')"></button>
+        <button class="putih" onclick="playpiano('sol')"><br><br><br><br><br>5</button>
+        <button class="hitam" onclick="playpiano('ab')"></button>
+        <button class="putih" onclick="playpiano('la')"><br><br><br><br><br>6</button>
+        <button class="hitam" onclick="playpiano('bb')"></button>
+        <button class="putih" onclick="playpiano('si')"><br><br><br><br><br>7</button>
+        <button class="putih" onclick="playpiano('Do')"><br><br><br><br><br>1</button>
+    </div>
+    <script>
+        let badan = document.getElementsByClassName('badan');
+        for (let i = 0; i < badan.length; i++) {
+            badan[i].classList.add('flex', 'm-0', 'p-0', 'h-screen', 'justify-center', 'items-center', 'bg-blue-500');
+        }
+
+      let pianos = document.getElementsByClassName('piano');
+        for (let i = 0; i < pianos.length; i++) {
+          pianos[i].classList.add('flex', 'relative',);
+        }
+
+      let hitam_children = document.getElementsByClassName('hitam');
+        for (let i = 0; i < hitam_children.length; i++) {
+            hitam_children[i].classList.add('w-8', 'h-32', 'bg-black', 'm-0', '-mx-4', '-z-0','text-white','hover:bg-yellow-500');
+        }
+        
+      let putih_children = document.getElementsByClassName('putih');
+        for (let i = 0; i < putih_children.length; i++) {
+            putih_children[i].classList.add('text-xl', 'w-14', 'h-52', 'border', 'hover:bg-gray-400', 'active:bg-blue-400', 'bg-white');
+        }  
+        function playpiano(notes)
+        {
+            switch(notes){
+                case 'do':
+                    audioC.load();
+                    audioC.play();
+                    break;
+                case 'db':
+                    audioDb.load();
+                    audioDb.play();
+                    break;
+                case 're':
+                    audioD.load();
+                    audioD.play();
+                    break;  
+                case 'eb':
+                    audioEb.load();
+                    audioEb.play();
+                    break;
+                case 'mi':
+                    audioE.load();
+                    audioE.play();
+                    break; 
+                case 'fa':
+                    audioF.load();
+                    audioF.play();
+                    break;   
+                case 'gb':
+                    audioGb.load();
+                    audioGb.play();
+                    break;
+                case 'sol':
+                    audioG.load();
+                    audioG.play();
+                    break;
+                case 'ab':
+                    audioAb.load();
+                    audioAb.play();
+                    break;
+                case 'la':
+                    audioA.load();
+                    audioA.play();
+                    break;
+                case 'bb':
+                    audioBb.load();
+                    audioBb.play();
+                    break;
+                case 'si':
+                    audioB.load();
+                    audioB.play();
+                    break;
+                case 'Do':
+                    audioC2.load();
+                    audioC2.play();
+                    break;
+            }
+            return;
+        }
+
+        document.addEventListener("keypress", function(){
+            switch(event.key){
+                case "a":
+                    playpiano("do");
+                    break;
+                case "w":
+                    playpiano("db");
+                    break
+                case "s":
+                    playpiano("re");
+                    break;
+                case "e":
+                    playpiano("eb");
+                    break
+                case "d":
+                    playpiano("mi");
+                    break;
+                case "f":
+                    playpiano("fa");
+                    break;
+                case "t":
+                    playpiano("gb");
+                    break
+                case "g":
+                    playpiano("sol");
+                    break;
+                case "y":
+                    playpiano("ab");
+                    break
+                case "h":
+                    playpiano("la");
+                    break;
+                case "u":
+                    playpiano("bb");
+                    break
+                case "j":
+                    playpiano("si");
+                    break;
+                case "k":
+                    playpiano("Do");
+                    break;
+            }
+            return;
+        })
+    </script>
+    </script>
+</body>
+</html>

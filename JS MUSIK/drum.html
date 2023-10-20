@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let snare = new Audio();
+        snare.src = "Drum/share-drum.mp3";
+        let hihat = new Audio();
+        hihat.src = "Drum/hihat-open.mp3";
+        let kick = new Audio();
+        kick.src = "Drum/bass.mp3";
+        let tom = new Audio();
+        tom.src = "Drum/tom1.mp3";
+        let floor = new Audio();
+        floor.src = "Drum/floor-tom.mp3";
+        let simbal = new Audio();
+        simbal.src = "Drum/ride.mp3";
+        let crash = new Audio();
+        crash.src = "Drum/crash.mp3"
+    </script>
+</head>
+<body class="bg-gray-700 flex h-screen justify-center items-center">
+    <div id="drum-kit" class="flex justify-center items-center">
+        <div class="drum drum-hihat absolute bg-red-500 rounded-full w-20 h-20 flex items-center justify-center z-20 mb-44 mr-80" onclick="playdrum('hihat')">
+            <span class="text-white text-lg">HiHat</span>
+        </div>
+        <div class="drum drum-hihat absolute bg-red-500 rounded-full w-32 h-32 flex items-center justify-center z-20 mb-80 mr-52" onclick="playdrum('crash')">
+            <span class="text-white text-lg">Crash</span>
+        </div>
+        <div class="drum drum-hihat absolute bg-red-500 rounded-full w-32 h-32 flex items-center justify-center z-20 mb-80 ml-52" onclick="playdrum('simbal')">
+            <span class="text-white text-lg">Simbal</span>
+        </div>
+        <div class="drum drum-snare absolute bg-gray-400 rounded-full w-28 h-28 flex items-center justify-center z-10 mb-28 mr-52" onclick="playdrum('snare')">
+            <span class="text-white text-lg">Snare</span>
+        </div>
+        <div class="drum drum-snare absolute bg-gray-400 rounded-full w-28 h-28 flex items-center justify-center z-10 mb-52" onclick="playdrum('tom')">
+            <span class="text-white text-lg">Tom</span>
+        </div>
+        <div class="drum drum-snare absolute bg-gray-400 rounded-full w-28 h-28 flex items-center justify-center z-10 mb-28 ml-52" onclick="playdrum('floor')">
+            <span class="text-white text-lg">Floor Tom</span>
+        </div>
+        <div class="drum drum-kick absolute bg-yellow-500 rounded-full w-40 h-40 flex items-center justify-center" onclick="playdrum('kick')">
+            <span class="text-white text-lg">Kick</span>
+        </div>
+    </div>
+
+    <script>
+        function playdrum(smash)
+        {
+            switch(smash)
+            {
+                case "hihat":
+                    hihat.load();
+                    hihat.play();
+                    break;
+                case "crash":
+                    crash.load();
+                    crash.play();
+                    break;
+                case "simbal":
+                    simbal.load();
+                    simbal.play();
+                    break;
+                case "snare":
+                    snare.load();
+                    snare.play();
+                    break;
+                case "tom":
+                    tom.load();
+                    tom.play();
+                    break;
+                case "floor":
+                    floor.load();
+                    floor.play();
+                    break;
+                case "kick":
+                    kick.load();
+                    kick.play();
+                    break;
+            }
+            return;
+        }
+
+        document.addEventListener("keypress", function(){
+            switch(event.key)
+            {
+                case 'a':
+                    playdrum("crash");
+                    break;
+                case 's':
+                    playdrum("hihat");
+                    break;
+                case 'd':
+                    playdrum("snare");
+                    break;
+                case 'f':
+                    playdrum("kick");
+                    break;
+                case 'g':
+                    playdrum("tom");
+                    break;
+                case 'h':
+                    playdrum("floor");
+                    break;
+                case 'j':
+                    playdrum("simbal");
+                    break;
+            }
+            return;
+        })
+    </script>
+</body>
+</html>

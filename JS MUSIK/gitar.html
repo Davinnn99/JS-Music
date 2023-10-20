@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let audioC = new Audio();
+        audioC.src = "Audio/C.mp3"
+        let audioDm = new Audio();
+        audioDm.src = "Audio/Dm.mp3"
+        let audioF = new Audio();
+        audioF.src = "Audio/F.mp3"
+        let audioG = new Audio();
+        audioG.src = "Audio/G.mp3"
+        let audioAm = new Audio();
+        audioAm.src = "Audio/Am.mp3"
+    </script>
+</head>
+<body class="bg-yellow-300 flex m-0 p-0 h-screen justify-center items-center">
+    <div id="gitar" class="block">
+        <div class="w-16 h-28 bg-black mx-auto rounded-lg relative">
+            <div class="w-2 h-14 bg-white absolute left-1/2 transform -translate-x-1/2 top-2 rounded-lg"></div>
+            <div class="w-1 h-1 bg-white absolute left-1/2 transform -translate-x-1/2 top-16 rounded-full"></div>
+            <div class="w-2 h-2 bg-white absolute left-1/2 transform -translate-x-1/2 top-22 rounded-full"></div>
+        </div>
+        <div class="items-center justify-center m-20 mb-0 mt-0">
+        <div class="w-16 h-14 border border-black bg-white justify-center items-baseline flex" onclick="playguitar('C')">C</div>
+        <div class="w-16 h-14 border border-black bg-white justify-center items-baseline flex" onclick="playguitar('Dm')">Dm</div>
+        <div class="w-16 h-14 border border-black bg-white justify-center items-baseline flex" onclick="playguitar('F')">F</div>
+        <div class="w-16 h-14 border border-black bg-white justify-center items-baseline flex" onclick="playguitar('G')">G</div>
+        <div class="w-16 h-14 border border-black bg-white justify-center items-baseline flex" onclick="playguitar('Am')">Am</div>
+        </div>
+        <div class="w-52 h-72 bg-yellow-900 mx-auto rounded-3xl relative">
+            <!-- Soundhole -->
+            <div class="w-20 h-20 bg-black mx-auto rounded-full absolute left-1/2 transform -translate-x-1/2 top-16"></div>
+            <div class="w-20 h-5 bg-black mx-auto rounded-xl absolute left-1/2 transform -translate-x-1/2 mt-48"></div>
+        </div>
+    </div>
+
+    <script>
+        function playguitar(chord)
+        {
+                switch(chord){
+                    case "C":
+                        audioC.load();
+                        audioC.currentTime = 1;
+                        audioC.play();
+                        break;
+                    case "Dm":
+                        audioDm.load();
+                        audioDm.currentTime = 1;
+                        audioDm.play();
+                        break;
+                    case "F":
+                        audioF.load();
+                        audioF.currentTime = 1;
+                        audioF.play();
+                        break;
+                    case "G":
+                        audioG.load();
+                        audioG.currentTime = 1;
+                        audioG.play();
+                        break;
+                    case "Am":
+                        audioAm.load();
+                        audioAm.currentTime = 1;
+                        audioAm.play();
+                        break;
+                }
+                return;
+        }
+        document.addEventListener("keypress", function(){
+            switch(event.key)
+            {
+                case "z":
+                    playguitar("C");
+                    break;
+                case "x":
+                    playguitar("Dm");
+                    break;
+                case "c":
+                    playguitar("F");
+                    break;
+                case "v":
+                    playguitar("G");
+                    break;
+                case "b":
+                    playguitar("Am");
+                    break;
+            }
+            return;
+        })
+    </script>
+</body>
+</html>
